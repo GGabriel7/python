@@ -1,0 +1,12 @@
+n = float(input('Qual tabuada deseja ver?\n'))
+
+print('{} x 1 = {}'.format(n, n*1))
+print('{} x 2 = {}'.format(n, n*2))
+print('{} x 3 = {}'.format(n, n*3))
+print('{} x 4 = {}'.format(n, n*4))
+print('{} x 5 = {}'.format(n, n*5))
+print(f'{n} x 6 = {n*6}')
+print(f'{n} x 7 = {n*7}')
+print(f'{n} x 8 = {n*8}')
+print(f'{n} x 9 = {n*9}')
+print(f'{n} x 10 = {n*10}')

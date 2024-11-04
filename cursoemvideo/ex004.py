@@ -1,0 +1,11 @@
+i = input('Digite algo: ')
+
+print('O tipo primitivo é ', type(i))
+print('É um alphanúmerico: ', i.isalnum())
+print('É um espaço: ', i.isspace())
+print('É alpha: ', i.isalpha())
+print('É um número: ', i.isnumeric())
+print('Tem ascii : ', i.isascii())
+print('Ta em minusculo: ', i.islower())
+print('Ta em maiusculo: ', i.isupper())
+print('So com a primeira letra em maiusculo: ', i.istitle())

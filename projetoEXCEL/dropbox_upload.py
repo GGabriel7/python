@@ -1,0 +1,17 @@
+import dropbox
+import os
+
+def enviar_para_dropbox(local_file_path):
+    ACCESS_TOKEN = 'sl.u.AFd9HOXjwf4r5jLoRrewAC31h8mafDwoZ8iNia6oe9b15Zt-eAPeWMmJcAcTMsWCQYDr6dMfNpVNJJb1rBwI5K-miIBg4drIjKzASfseCuv0q7DPRhTDiFRC64c5I4f2GG14NSmd1zI_eZ48M5n1PMwZcGQn1EPNckKc2Lwc3VXaoby5-1qRWu9hLYGr85NlcrYeUUzXe7sal6o4DqWZppe5RKzGzXHCeKkC26wvj5uqIKC7UV43b1uBDnzxa-1wz0PjtdFTpdiJ79YusOf-PPN6tSM3q3X8qrh-9RRMyopuGB43ibveU17_omnm3vMXN_EIuasG00mR54Gh9_m9mHzcnJ70B8OooiG4APa0I9762_vaxFLxMH2YYrFT6C7-dqZtnlZ3mmIVmF5cX5pkf76NFfA6ilgEIOntBn3mC1Klc1KdnN8Uqui1CsLqkyEylqK0u2x2qMeTPXphycW95PlaRnrjPrqDdis9mEKFMIVIeZ5-p-kv-_gITEvZQIKeRMWVklE0R4XNqP-2sbjL9728P2YhH5YNnu38Ja-zO9WScyKbpUmdSCjLpMDek5EMwYRzG_C-RLk26gTxokBvBGLNGWLPtiOuyczHjcDOWPCnWKE_947qJZL6wWFClPqc8gJFZOgQ-Tqx2814SVyZU9Srk3Q9mJAUisYSv-KSFZLGOCvGpLg29CM89tyR_8Ujmbga30mUbdP-A1rLdk9FtcdGNkd_7mVSOL81e4k6zFXbY-PBfyFqBI2hoD6xuY__uBSVT6pm9mse5907YlkFZXugaw1yJs_jtPJWqz1PVPibq5g_u47EPhUkg35TAo2tQ0kgbsbrC1DredQZ01Ba8kIy4B-sydFeLycwK-gNPon5Dfl1VIn-F8-9pcu9E8G1Y4kGz9BkHUQwlfi5WsH_JPKE6FqYaAAzC3FObsq9lf9Kki2Pbv_wi1Eso7yYrDo_RRaDDqr9Zrg0JDXX5xP4TyaCdST9KnsU2M6SUFmDXLsaXquyjOjGD8a6goetS9YHWpb9_TtLnX_Jq64JQkRycGt7rij43jeYhbGiu6mv1ft3kKIeVi77-P288kBlRxxWcHIZiQmlM1SnowL4mFhYqQAyc-EZ_44Nqjr6SPanrDSGjAMr4zWu_4Pv23C4ZcalHoFxFoxHpJMDzNz8GYkKLZn_oJKNzQETRhWFhXboYaAiVpiika53Wx6MxiyT9gFLfJVrwDrt7VHz4E4mNGWA0Jlh3u5X04BMVekS27kPWh9P35pldZbQQAUVCQ3KcFtzaabTYgleBwOiIECKBm3NBNITFYsywSnr1Skq3JTtBCswtg3K9dmwwE5OCVxUrYudS4A'
+    dropbox_file_path = f'/planilhasHoraExtra/{os.path.basename(local_file_path)}'
+    dbx = dropbox.Dropbox(ACCESS_TOKEN)
+
+    try:
+        with open(local_file_path, 'rb') as f:
+            dbx.files_upload(f.read(), dropbox_file_path, mode=dropbox.files.WriteMode.overwrite)
+
+        shared_link_metadata = dbx.sharing_create_shared_link_with_settings(dropbox_file_path)
+        return shared_link_metadata.url
+    except Exception as e:
+        print(f"Erro ao enviar para o Dropbox: {e}")
+        return None

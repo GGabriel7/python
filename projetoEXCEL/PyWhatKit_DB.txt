@@ -1,0 +1,35 @@
+Date: 16/1/2025
+Time: 16:15
+Phone Number: +558588570694
+Message: Mensagem enviada.
+--------------------
+Date: 16/1/2025
+Time: 16:35
+Phone Number: +5511999999999
+Message: Mensagem automática enviada com Selenium e pywhatkit!
+--------------------
+Date: 16/1/2025
+Time: 16:36
+Phone Number: +558598238349
+Message: Mensagem automática enviada com Selenium e pywhatkit!
+--------------------
+Date: 16/1/2025
+Time: 16:38
+Phone Number: +558598238349
+Message: Mensagem automática enviada com Selenium e pywhatkit!
+--------------------
+Date: 16/1/2025
+Time: 17:49
+Phone Number: +558588570694
+Message: Segue o link para o arquivo de horas extras: None
+--------------------
+Date: 16/1/2025
+Time: 17:55
+Phone Number: +558588570694
+Message: Segue o link para o arquivo de horas extras: https://www.dropbox.com/scl/fi/be04ozjirg51gme212caa/hora_extra.xlsx?rlkey=cdhnx6w6hvavloe9oe653z4c0&dl=0
+--------------------
+Date: 23/1/2025
+Time: 14:5
+Phone Number: +558588570694
+Message: Segue o link para o arquivo de horas extras: None
+--------------------

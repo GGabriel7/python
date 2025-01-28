@@ -66,3 +66,32 @@ def apagarUsuario(id):
     conn.commit()
     print('Pessoa apagada.')
     conn.close()
+
+
+def criarJSON():
+    import json
+
+    jsonPath = os.path.join(dir, 'usuarios.json')
+
+    conn = sqlite3.connect(dbPath)
+    cursor = conn.cursor()
+
+    cursor.execute('''
+        SELECT json_group_array(
+            json_object(
+                'id', id,
+                'nome', nome,
+                'idade', idade
+            )
+        ) AS resultados_json
+        FROM usuarios
+    ''')
+
+    resultado = cursor.fetchone()[0]
+    conn.close()
+
+    if resultado is None:
+        resultado = "[]"
+
+    with open(jsonPath, 'w', encoding='utf-8') as arquivo_json:
+        json.dump(json.loads(resultado), arquivo_json, ensure_ascii=False, indent=4)

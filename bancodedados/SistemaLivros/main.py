@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('SistemaLivros/biblioteca.db')
+conn = sqlite3.connect('biblioteca.db')
 cursor = conn.cursor()
 
 # CRIANDO TABELAS
@@ -40,7 +40,7 @@ conn.close()
 
 # PREECHENDO TABELAS
 def adicionarLivro(titulo, autor, ano):
-    conn = sqlite3.connect('SistemaLivros/biblioteca.db')
+    conn = sqlite3.connect('biblioteca.db')
     cursor = conn.cursor()
 
     cursor.execute('''
@@ -54,7 +54,7 @@ def adicionarLivro(titulo, autor, ano):
 
 
 def adicionaUsuario(nome, email):
-    conn = sqlite3.connect('SistemaLivros/biblioteca.db')
+    conn = sqlite3.connect('biblioteca.db')
     cursor = conn.cursor()
 
     cursor.execute('''
@@ -68,7 +68,7 @@ def adicionaUsuario(nome, email):
 
 
 def registrarEmprestimo(livro_id, usuario_id, data_emprestimo):
-    conn = sqlite3.connect('SistemaLivros/biblioteca.db')
+    conn = sqlite3.connect('biblioteca.db')
     cursor = conn.cursor()
 
     cursor.execute('''
@@ -83,7 +83,7 @@ def registrarEmprestimo(livro_id, usuario_id, data_emprestimo):
 
 # LISTAR TABELAS
 def listarLivros():
-    conn = sqlite3.connect('SistemaLivros/biblioteca.db')
+    conn = sqlite3.connect('biblioteca.db')
     cursor = conn.cursor()
 
     cursor.execute('SELECT * FROM livros')
@@ -99,7 +99,7 @@ def listarLivros():
 
 
 def listarUsuario():
-    conn = sqlite3.connect('SistemaLivros/biblioteca.db')
+    conn = sqlite3.connect('biblioteca.db')
     cursor = conn.cursor()
 
     cursor.execute('SELECT * FROM usuarios')
@@ -115,7 +115,7 @@ def listarUsuario():
 
 
 def listarEmprestimos():
-    conn = sqlite3.connect('SistemaLivros/biblioteca.db')
+    conn = sqlite3.connect('biblioteca.db')
     cursor = conn.cursor()
 
     cursor.execute('''
